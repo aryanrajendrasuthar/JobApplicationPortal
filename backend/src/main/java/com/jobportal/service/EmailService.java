@@ -93,7 +93,7 @@ public class EmailService {
                   <p style="margin:0;font-weight:600;color:%s;font-size:18px">%s</p>
                   <p style="margin:8px 0 0;color:#6b7280">%s</p>
                 </div>
-                <a href="%s/dashboard" style="display:inline-block;background:#6366f1;color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600">View My Applications</a>
+                <a href="%s/seeker/dashboard" style="display:inline-block;background:#6366f1;color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600">View My Applications</a>
               </div>
             </div>
             """.formatted(name, jobTitle, companyName, badgeColor, badgeColor, status.name(), statusText, frontendUrl);
@@ -109,7 +109,7 @@ public class EmailService {
                 <p style="color:#374151;font-size:16px">Hi <strong>%s</strong>,</p>
                 <p style="color:#374151">Your application for <strong>%s</strong> at <strong>%s</strong> has been successfully submitted!</p>
                 <p style="color:#6b7280">The employer will review your application and get back to you. Track your application status in your dashboard.</p>
-                <a href="%s/dashboard" style="display:inline-block;background:#6366f1;color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600">View Dashboard</a>
+                <a href="%s/seeker/dashboard" style="display:inline-block;background:#6366f1;color:white;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600">View Dashboard</a>
               </div>
             </div>
             """.formatted(name, jobTitle, companyName, frontendUrl);
