@@ -30,6 +30,6 @@ public class AuthController {
 
     @GetMapping("/me")
     public ResponseEntity<AuthResponse> getMe(@AuthenticationPrincipal UserDetails userDetails) {
-        return ResponseEntity.ok(authService.getMe(userDetails.getUsername()));
+        return ResponseEntity.ok(authService.getMe(Long.parseLong(userDetails.getUsername())));
     }
 }

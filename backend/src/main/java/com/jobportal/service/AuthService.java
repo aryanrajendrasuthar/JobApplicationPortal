@@ -98,9 +98,9 @@ public class AuthService {
             .build();
     }
 
-    public AuthResponse getMe(String email) {
-        User user = userRepository.findByEmail(email)
-            .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    public AuthResponse getMe(Long userId) {
+        User user = userRepository.findById(userId)
+            .orElseThrow(() -> new ResourceNotFoundException("User", userId));
 
         return AuthResponse.builder()
             .userId(user.getId())
