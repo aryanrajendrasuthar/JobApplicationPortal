@@ -1,0 +1,26 @@
+# Java / Maven
+backend/target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Environment / secrets
+.env
+.env.local
+.env.production.local
+backend/.env
+
+# Docker volumes
+postgres_data/
+mongo_data/
+redis_data/

@@ -58,8 +58,8 @@ aws:
   s3:
     bucket-name: ${AWS_S3_BUCKET:job-portal-resumes}
     region: ${AWS_REGION:us-east-1}
-  access-key: ${AWS_ACCESS_KEY:}
-  secret-key: ${AWS_SECRET_KEY:}
+  access-key: ${AWS_ACCESS_KEY_ID:}
+  secret-key: ${AWS_SECRET_ACCESS_KEY:}
 
 # JWT
 jwt:
