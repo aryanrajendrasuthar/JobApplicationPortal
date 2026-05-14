@@ -1,0 +1,5 @@
+#!/bin/bash
+# Wrapper script that forces Java 21 for Maven builds.
+# Lombok does not yet support Java 25 (the system default).
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
+exec mvn "$@"
