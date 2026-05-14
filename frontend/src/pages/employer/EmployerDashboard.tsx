@@ -3,14 +3,13 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Plus, Briefcase, Users, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { jobsApi } from '../../api/jobs';
-import { applicationsApi } from '../../api/applications';
 import { useAuthStore } from '../../store/authStore';
 import JobPostForm from './JobPostForm';
 import KanbanBoard from './KanbanBoard';
 import type { Job } from '../../types';
 
 export default function EmployerDashboard() {
-  const { user } = useAuthStore();
+  useAuthStore();
   const queryClient = useQueryClient();
   const [view, setView] = useState<'jobs' | 'post' | 'kanban'>('jobs');
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);

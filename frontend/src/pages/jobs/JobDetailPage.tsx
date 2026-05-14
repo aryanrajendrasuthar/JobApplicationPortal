@@ -138,19 +138,19 @@ export default function JobDetailPage() {
               <p className="text-gray-600 leading-relaxed whitespace-pre-wrap">{job.fullDescription}</p>
             </section>
           )}
-          {job.responsibilities?.length > 0 && (
+          {(job.responsibilities?.length ?? 0) > 0 && (
             <section>
               <h2 className="text-lg font-semibold text-gray-900 mb-3">Responsibilities</h2>
               <ul className="list-disc list-inside space-y-1 text-gray-600">
-                {job.responsibilities.map((r, i) => <li key={i}>{r}</li>)}
+                {job.responsibilities?.map((r, i) => <li key={i}>{r}</li>)}
               </ul>
             </section>
           )}
-          {job.requirements?.length > 0 && (
+          {(job.requirements?.length ?? 0) > 0 && (
             <section>
               <h2 className="text-lg font-semibold text-gray-900 mb-3">Requirements</h2>
               <ul className="list-disc list-inside space-y-1 text-gray-600">
-                {job.requirements.map((r, i) => <li key={i}>{r}</li>)}
+                {job.requirements?.map((r, i) => <li key={i}>{r}</li>)}
               </ul>
             </section>
           )}
