@@ -54,6 +54,21 @@ public class S3Service {
         return buildUrl(key);
     }
 
+    public String uploadAvatar(MultipartFile file, Long userId) throws IOException {
+        String key = "avatars/" + userId + "/" + UUID.randomUUID() + "-" + file.getOriginalFilename();
+
+        PutObjectRequest request = PutObjectRequest.builder()
+            .bucket(bucketName)
+            .key(key)
+            .contentType(file.getContentType())
+            .contentLength(file.getSize())
+            .build();
+
+        s3Client.putObject(request, RequestBody.fromBytes(file.getBytes()));
+
+        return buildUrl(key);
+    }
+
     public void deleteFile(String fileUrl) {
         if (fileUrl == null || fileUrl.isBlank()) return;
         String key = fileUrl.substring(fileUrl.indexOf("amazonaws.com/") + 14);
